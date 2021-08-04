@@ -1,6 +1,7 @@
 var/*
 fullData
 *.txt
+!headers/*.txt
 *.db
 .DS_Store
 node_modules
