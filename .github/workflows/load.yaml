@@ -20,7 +20,9 @@ jobs:
       with:
         node-version: '16'
     - name: Install Python dependencies
-      run: pipenv install
+      run: |-
+        pip install --no-cache-dir pipenv
+        pipenv install
     - name: Install Node
       run: npm ci
     - name: Load data
