@@ -23,17 +23,16 @@ jobs:
       run: |-
         pip install --no-cache-dir pipenv
         pipenv install
-    - name: Install Node
-      run: npm ci
+    - name: Install Node dependencies
+      run: |-
+        npm i -g heroku
+        heroku plugins:install heroku-builds
     - name: Load data
       run: pipenv run ./load.sh
-    # - name: Publish
-    #   run: TKTK
     - name: Deploy to Heroku
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: |-
-        heroku plugins:install heroku-builds
-        datasette publish heroku 538.db \
+        datasette publish heroku 527s.db \
           -m metadata.json \
-          -n 527-datasette'
+          -n irs-527-datasette'
