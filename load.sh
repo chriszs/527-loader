@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-rm 527s.db
+rm 527s.db || true
 wget -nv https://forms.irs.gov/app/pod/dataDownload/fullData
 unzip fullData
 python process_data.py
