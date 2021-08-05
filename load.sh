@@ -2,6 +2,7 @@
 
 set -euo pipefail
 
+rm 527s.db
 wget -nv https://forms.irs.gov/app/pod/dataDownload/fullData
 unzip fullData
 python process_data.py
@@ -15,5 +16,4 @@ csvs-to-sqlite out/expenditures.txt 527s.db --separator '|' --quoting 3 --shape 
 rm -rf var
 rm *.txt
 rm fullData
-rm 527s.db
 rm -rf out
