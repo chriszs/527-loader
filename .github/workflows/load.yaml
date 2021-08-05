@@ -39,4 +39,4 @@ jobs:
         pipenv run datasette publish heroku 527s.db \
           -m metadata.json \
           -n irs-527-datasette \
-          --cors
+          --extra-options "--cors"
