@@ -16,4 +16,4 @@ rm -rf var
 rm *.txt
 rm fullData
 rm 527s.db
-rm out
+rm -rf out
